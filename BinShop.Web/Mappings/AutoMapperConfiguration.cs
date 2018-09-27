@@ -9,7 +9,6 @@ namespace BinShop.Web.Mappings
     {
         public static void Configure()
         {
-
             Mapper.CreateMap<Post, PostViewModel>();
 
             Mapper.CreateMap<PostCategory, PostCategoryViewModel>();
