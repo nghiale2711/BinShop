@@ -3,7 +3,7 @@ using System.Linq;
 using BinShop.Data.Infrastructure;
 using BinShop.Model.Models;
 
-namespace TeduShop.Data.Repositories
+namespace BinShop.Data.Repositories
 {
     public interface IProductCategoryRepository : IRepository<ProductCategory>
     {

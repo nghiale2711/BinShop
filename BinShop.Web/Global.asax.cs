@@ -14,9 +14,9 @@ namespace BinShop.Web
     {
         protected void Application_Start()
         {
-            AutoMapper.Mapper.Initialize(m => m.AddProfile<AutoMapperConfiguration>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AutoMapperConfiguration.Configure();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
