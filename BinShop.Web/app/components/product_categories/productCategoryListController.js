@@ -7,15 +7,15 @@
         $scope.productCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getProductCagories = getProductCagories;
+        $scope.getProductCategories = getProductCategories;
         $scope.keyword = '';
 
         $scope.search = search;
 
         function search() {
-            getProductCagories();
+            getProductCategories();
         }
-        function getProductCagories(page) {
+        function getProductCategories(page) {
             page = page || 0;
             var config = {
                 params: {
@@ -28,9 +28,6 @@
                 if (result.data.TotalCount == 0) {
                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                 }
-                else {
-                    notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' bản ghi.');
-                }
                 $scope.productCategories = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
@@ -40,6 +37,6 @@
             });
         }
 
-        $scope.getProductCagories();
+        $scope.getProductCategories();
     }
 })(angular.module('binshop.product_categories'));
