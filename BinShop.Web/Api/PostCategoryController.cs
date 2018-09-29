@@ -12,6 +12,7 @@ using BinShop.Web.Infrastructure.Extensions;
 namespace BinShop.Web.Api
 {
     [RoutePrefix("api/postcategory")]
+    [Authorize]
     public class PostCategoryController : ApiControllerBase
     {
         IPostCategoryService _postCategoryService;
