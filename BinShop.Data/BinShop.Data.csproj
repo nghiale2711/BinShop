@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201809250418399_Intergrate-AspnetIdentity.Designer.cs">
       <DependentUpon>201809250418399_Intergrate-AspnetIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809290840112_AddTagField.cs" />
+    <Compile Include="Migrations\201809290840112_AddTagField.Designer.cs">
+      <DependentUpon>201809290840112_AddTagField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809250418399_Intergrate-AspnetIdentity.resx">
       <DependentUpon>201809250418399_Intergrate-AspnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809290840112_AddTagField.resx">
+      <DependentUpon>201809290840112_AddTagField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
