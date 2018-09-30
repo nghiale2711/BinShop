@@ -8,6 +8,8 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using System.Data.Common;
+    using BinShop.Common;
 
     internal sealed class Configuration : DbMigrationsConfiguration<BinShop.Data.BinShopDbContext>
     {
@@ -18,34 +20,34 @@
 
         protected override void Seed(BinShop.Data.BinShopDbContext context)
         {
-            //CreateProductCategorySample(context);
+            CreateProductCategorySample(context);
             //  This method will be called after migrating to the latest version.
 
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new BinShopDbContext()));
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new BinShopDbContext()));
 
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new BinShopDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new BinShopDbContext()));
 
-            var user = new ApplicationUser()
-            {
-                UserName = "Bin",
-                Email = "nghiale2711@gmail.com",
-                EmailConfirmed = true,
-                BirthDay = DateTime.Now,
-                FullName = "Bin Shop"
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "Bin",
+            //    Email = "nghiale2711@gmail.com",
+            //    EmailConfirmed = true,
+            //    BirthDay = DateTime.Now,
+            //    FullName = "Bin Shop"
 
-            };
+            //};
 
-            manager.Create(user, "123654$");
+            //manager.Create(user, "123654$");
 
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-            }
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //}
 
-            var adminUser = manager.FindByEmail("nghiale2711@gmail.com");
+            //var adminUser = manager.FindByEmail("nghiale2711@gmail.com");
 
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
 
         private void CreateProductCategorySample(BinShop.Data.BinShopDbContext context)
@@ -64,5 +66,14 @@
             }
 
         }
+
+        private void CreateFooter(BinShopDbContext context)
+        {
+            if (context.Footers.Count(x=>x.ID== CommonConstants.DefaultFooterId)==0)
+            {
+                string content = "";
+            }
+        }
+
     }
 }
